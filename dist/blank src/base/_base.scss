@@ -1,0 +1,57 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    //this defines that 1rem is
+    font-size: 62.5%; //1rem = 10px; 10px/16px = 62.5%
+    scroll-behavior: smooth;
+    /* @include respond(phone) {
+        font-size: 50%;
+ mobile-s 320 - 20
+mobile-m - 375  - 23.43
+mobile-l - 425 - 26.56
+tablet - 600 - 37.5
+tablet-p - 768 -48
+tablet-l - 900 - 56.25
+laptop - 1024 - 64
+laptop L - 1140 - 71.25
+big-desktop - 1800
+    }*/
+    @include respond(big-desktop) {
+        font-size: 75%;
+    }
+    @include respond(laptop-l) {
+        font-size: 68%;
+    }
+    @include respond(laptop) {
+        font-size: 65%;
+    }
+    @include respond(tablet-l) {
+        font-size: 58%;
+    }
+    @include respond(tablet-p) {
+        font-size: 52%;
+    }
+    @include respond(tablet) {
+        font-size: 50%;
+    }
+    @include respond( mobile-l) {
+        font-size: 47%;
+    }
+    @include respond( mobile-m) {
+        font-size: 44%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+    @include respond(tablet-l) {
+        padding: 0;
+    }
+}

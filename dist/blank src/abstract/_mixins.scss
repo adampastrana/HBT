@@ -1,0 +1,101 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin center-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//Media Query Manager
+
+/*
+0 - 600px:          Phone
+600 - 900px:        Tablet Prtrait
+900- 1200px:        Tablet landscape
+[1200 - 1800]       Normal Style Applied
+1800px +            Big Desktop
+ 
+$breakpoint arguement choices;
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+mobile-s 320 - 20
+mobile-m - 375  - 23.43
+mobile-l - 425 - 26.56
+tablet - 600 - 37.5
+tablet-p - 768 -48
+tablet-l - 900 - 56.25
+laptop - 1024 - 64
+laptop-L - 1140 - 71.25
+big-desktop - 1800
+
+1em = 16px
+
+ORDER: Base  + Typography > General Layout + grid > page layout  > components
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint==mobile-s {
+        @media (max-width: 20em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==mobile-m {
+        @media (max-width: 23.43em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==mobile-l {
+        @media (max-width: 26.56em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==tablet {
+        @media (max-width: 37.5em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==tablet-p {
+        @media (max-width: 48em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==tablet-l {
+        @media (max-width: 56.25em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==laptop {
+        @media (max-width: 64em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==laptop-l {
+        @media (max-width: 71em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==big-desktop {
+        @media (min-width: 112.5em) {
+            @content
+        }
+        ;
+    }
+}

@@ -1,0 +1,23 @@
+                                /* width */
+                                
+                                 ::-webkit-scrollbar {
+                                    width: 20px;
+                                }
+                                /* Track */
+                                
+                                 ::-webkit-scrollbar-track {
+                                    //background-color: $color-black;
+                                    box-shadow: inset 0 0 5px rgb(19, 19, 19);
+                                    border-radius: 10px;
+                                }
+                                /* Handle */
+                                
+                                 ::-webkit-scrollbar-thumb {
+                                    background-image: linear-gradient(45deg, $color-white, $darkgreen);
+                                    border-radius: 10px;
+                                    transition: all .2s;
+                                    &:hover {
+                                        //background-image: linear-gradient(45deg, $green, $darkgreen);
+                                    }
+                                }
+                                /* Handle on hover */
